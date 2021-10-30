@@ -16,7 +16,9 @@ services:
     
   app-api:
     restart: unless-stopped
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile.NET5
     environment:
       - ConnectionStrings:DefaultConnection=Server=app-sql,1433;Database=AppDb;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
