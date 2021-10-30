@@ -5,9 +5,15 @@ on:
     branches:
       - master
       - main
+    paths:
+      - .github/workflows/flutter-build.yml
+      - Mobile/**
   pull_request:
     branches:
       - '*'
+    paths:
+      - .github/workflows/flutter-build.yml
+      - Mobile/**
 
 jobs:
   build:
@@ -26,6 +32,7 @@ jobs:
         channel: 'stable'
     - name: Build
       run: |
+        cd Mobile # navigate to root of flutter project
         if [[ "$RUNNER_OS" == "Linux" || "$RUNNER_OS" == "Windows" ]]; then
           flutter pub get
           flutter build apk

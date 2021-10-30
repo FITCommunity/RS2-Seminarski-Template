@@ -5,9 +5,23 @@ on:
     branches:
       - master
       - main
+    paths:
+      - .github/workflows/docker-build.yml
+      - Dockerfile.NET3
+      - Dockerfile.NET5
+      - docker-compose.yml
+      - Model/**
+      - WebAPI/**
   pull_request:
     branches:
       - '*'
+    paths:
+      - .github/workflows/docker-build.yml
+      - Dockerfile.NET3
+      - Dockerfile.NET5
+      - docker-compose.yml
+      - Model/**
+      - WebAPI/**
 
 jobs:
   build:
