@@ -3,14 +3,13 @@ name: Flutter Build
 on:
   push:
     branches:
-      - master
-      - main
+      - *
     paths:
       - .github/workflows/flutter-build.yml
       - Mobile/**
   pull_request:
     branches:
-      - '*'
+      - *
     paths:
       - .github/workflows/flutter-build.yml
       - Mobile/**
